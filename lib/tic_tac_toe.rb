@@ -52,18 +52,13 @@ end
 
 
 def current_player(board)
-  count_x = board.find_all{|values| values == "X"}
-  count_o = board.find_all{|values| values == "O" }
-  if board.include?("X" || "O")
-    if turn_count(board).odd?
-      if count_x.size < count_o.size
-        "X"
-      else
-        "O"
-      end
-    elsif turn_count(board).even?
+  if turn_count == 0
     value = "X" || "O"
     value
+  elsif turn_count(board).even? && value == "X"
+    "O"
+  elsif turn_count(board).even? && value == "O"
+    "X"
   end
 end
 
