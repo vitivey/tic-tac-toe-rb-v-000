@@ -45,15 +45,9 @@ def turn(board)
   end
 end
 
-
 def turn_count(board) #counts occupied positions
-  count=0
-  board.each do |turn|
-    if turn ==  "X" || turn == "O"
-      count+=1
-    end
-  end
-  count
+  count = board.find_all{|values| values == "X" || values == "O" }
+  count.size
 end
 
 
